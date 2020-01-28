@@ -10,7 +10,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Image;
 
 Route::get('/', function () {
+
+    $images = Image::all();
+    foreach ($images as $image){
+        echo $image->image_path . '<br>';
+        echo $image->description . '<br>';
+        echo $image->user->user. '<br>';
+        echo '<h3> comentarios</h3>';
+        foreach ($image->comments as $comment){
+            echo $comment->user->user .':   ' .$comment->content . '<br>';
+        }
+        echo 'LIKES: '. count($image->likes);
+        echo '<hr>';
+    }
+    die();
+
     return view('welcome');
 });
