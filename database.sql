@@ -1,7 +1,7 @@
 CREATE TABLE users (
     id      int(255)    auto_increment not null,
     role    varchar(255),
-    user    varchar(255) not null,
+    name    varchar(255) not null,
     surname varchar(255),
     nick    varchar(255),
     email   varchar(255),
