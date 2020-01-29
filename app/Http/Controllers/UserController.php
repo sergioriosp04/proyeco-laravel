@@ -12,9 +12,11 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
+        //conseguir el usuario identificado
+        $user = \Auth::user();
+        $id = $user->id;
 
-        $id = \Auth::user()->id;
-
+        //validacion del formulario
        $validate = $this->validate($request, [
            'name' => 'required|string|max:255',
            'surname' => 'required|string|max:255',
@@ -22,10 +24,23 @@ class UserController extends Controller
            'email' => 'required|string|email|max:255|unique:users,email,'.$id,
        ]);
 
+        //recoger los datos del formulario
         $name = $request->input('name');
         $surname = $request->input('surname');
         $nick = $request->input('nick');
         $email = $request->input('email');
+
+        //asignar nuevos valores al objeto del usuario
+        $user->name = $name;
+        $user->nick = $nick;
+        $user->email = $email;
+        $user->surname = $surname;
+
+        //ejecutar consulta:cambios en la base de datos
+        $user->update();
+
+        return redirect()->route('config')
+                            ->with(['message' => 'usuario actualizado correctamente']);
 
         //dd($id);
     }
