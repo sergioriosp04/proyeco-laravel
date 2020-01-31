@@ -22,3 +22,19 @@
     height: 100%;
     object-fit: fill;
 }
+
+.comments-container{
+    margin-left: 0px;
+}
+.comments{
+    margin: 0px 0px 20px ;
+}
+
+.likes{
+    float: left;
+    margin: 0px 10px 0px 10px;
+}
+
+.likes img{
+    width: 20px;
+}

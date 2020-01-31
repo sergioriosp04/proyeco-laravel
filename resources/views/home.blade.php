@@ -16,19 +16,23 @@
                         <div class="image-container">
                             <img src="{{ route('image.file',['filename' => $image->image_path]) }}" class="image " alt=" error en la red al cargar la imagen">
                         </div>
-                        <div class="likes">
 
-                        </div>
                         <div class="description">
                             <span class="font-weight-bold pl-3 pt-5">{{ '@'.$image->user->nick. ':'}}</span>
                             <p class="pl-3">{{ $image->description }}</p>
                         </div>
+
+                        <div class="likes">
+                            <img src="{{ asset('img/heart-black.png') }}"  alt="">
+                        </div>
+                        <div class="comments-container"></div>
+                        <a href="" class="btn btn-sm btn-warning comments">Comentarios</a>
+
                     </div>
                 </div>
             @endforeach
          {{--        PAGINACION--}}
-                <p class="text-center">{{$images->links()}}</p>
-
+                {{$images->links()}}
         </div>
 
     </div>
