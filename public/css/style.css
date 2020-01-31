@@ -10,7 +10,8 @@
 }
 
 .image-container{
-    max-height: 400px;
+    /*max-height: 400px;*/
+    height: 400px;
     overflow: hidden;
     width: 100%;
 
@@ -18,4 +19,6 @@
 
 .image{
     width: 100% !important;
+    height: 100%;
+    object-fit: fill;
 }

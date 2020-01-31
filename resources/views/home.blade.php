@@ -14,7 +14,7 @@
                     </div>
                     <div class="card-body p-0">
                         <div class="image-container">
-                            <img src="{{ route('image.file',['filename' => $image->image_path]) }}" class="image" alt=" error en la red al cargar la imagen">
+                            <img src="{{ route('image.file',['filename' => $image->image_path]) }}" class="image " alt=" error en la red al cargar la imagen">
                         </div>
                         <div class="likes">
 
@@ -26,7 +26,11 @@
                     </div>
                 </div>
             @endforeach
+         {{--        PAGINACION--}}
+                <p class="text-center">{{$images->links()}}</p>
+
         </div>
+
     </div>
 </div>
 @endsection
