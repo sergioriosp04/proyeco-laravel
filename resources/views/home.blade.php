@@ -26,7 +26,7 @@
                             <img src="{{ asset('img/heart-black.png') }}"  alt="">
                         </div>
                         <div class="comments-container"></div>
-                        <a href="" class="btn btn-sm btn-warning comments">Comentarios</a>
+                        <a href="" class="btn btn-sm btn-warning comments">Comentarios {{ count($image->comments) }}</a>
 
                     </div>
                 </div>
